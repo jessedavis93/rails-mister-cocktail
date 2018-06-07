@@ -1,2 +1,10 @@
 <h1>Cocktails#new</h1>
-<p>Find me in app/views/cocktails/new.html.erb</p>
+
+<h3>Add a new cocktail!</h3>
+
+<%= form_for(@cocktail) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.submit %>
+<% end %>
