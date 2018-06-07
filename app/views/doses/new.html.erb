@@ -1,2 +1,13 @@
 <h1>Doses#new</h1>
-<p>Find me in app/views/doses/new.html.erb</p>
+<p>Add stuff to ur bevs</p>
+
+<% @list = [] %>
+<% Ingredient.all.each { |x| @list << x.name } %>
+
+<%= form_for [@dose, @cocktail] do |f| %>
+  <%= f.text_field :description %>
+  <%= f.select :ingredient, @list %>
+
+  <%= f.button :Submit %>
+<% end %>
+
