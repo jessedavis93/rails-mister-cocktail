@@ -1,13 +1,13 @@
-<h1>Doses#new</h1>
-<p>Add stuff to ur bevs</p>
+<h1><%= @cocktail.name %></h1>
+<h4>Add ingredients to your drink</h4>
 
 <% @list = [] %>
 <% Ingredient.all.each { |x| @list << x.name } %>
 
-<%= form_for [@dose, @cocktail] do |f| %>
-  <%= f.text_field :description %>
-  <%= f.select :ingredient, @list %>
+<%= simple_form_for [@cocktail, @dose], :url => create_dose_path do |f| %>
+    <%= f.input :description %>
+    <%= f.association :ingredient %>
 
-  <%= f.button :Submit %>
+    <%= f.submit %>
 <% end %>
 

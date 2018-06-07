@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'cocktails/:id', to: 'cocktails#show', as: :cocktail
 
   get 'cocktails/:cocktail_id/doses/new', to: 'doses#new', as: :dose_new
-  post 'cocktails/:cocktail_id/doses', to: 'doses#create'
+  post 'cocktails/:cocktail_id/doses', to: 'doses#create', as: :create_dose
 
-  delete'doses/:id', to: 'doses#destroy'
+  delete 'doses/:id', to: 'doses#destroy', as: :dose_delete
 end
