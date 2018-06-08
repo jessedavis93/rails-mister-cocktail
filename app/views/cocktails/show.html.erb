@@ -3,13 +3,21 @@
   <h1 class="cocktail-name"><%= @cocktail.name %><%= image_tag('cocktail.png', size: '60x60') %></h1>
 </div>
 
+<div class="button-bar">
+  <div class="main-button">
+    <%= link_to "Home", cocktails_path %>
+  </div>
+  <div class="main-button">
+    <%= link_to "Add a Dose", dose_new_path(@cocktail) %>
+  </div>
+</div>
 
 
 <div class="drink-body">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-8 col-md-offset-4"><% @cocktail.doses.each do |dose| %>
-          <p> -- <%= dose.description %> of <%= dose.ingredient.name %>   <%= link_to "Delete", dose_delete_path(dose),
+          <p> -- <%= dose.description %> : <%= dose.ingredient.name %>   <%= link_to image_tag('delete.png', class: 'trash'), dose_delete_path(dose),
             method: :delete,
             data: { confirm: "Are you sure?" } %><p>
 
@@ -19,14 +27,6 @@
   </div>
 </div>
 
-<div class="buttons">
-  <div class="main-button">
-    <%= link_to "Home", cocktails_path %>
-  </div>
-  <div class="main-button">
-    <%= link_to "Add Recipe", dose_new_path(@cocktail) %>
-  </div>
-</div>
 
 
 
