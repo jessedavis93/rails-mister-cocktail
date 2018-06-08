@@ -1,13 +1,26 @@
-<h1><%= @cocktail.name %></h1>
+<div class="drink-header">
+  <h1><%= @cocktail.name %></h1>
+  <%= image_tag('coconut.png', size: '100x100') %>
+</div>
+
+<div class="align-one-button">
+  <div class="main-button">
+    <%= link_to "Home", cocktails_path %>
+  </div>
+</div>
+
 <h4>Add ingredients to your drink</h4>
+
 
 <% @list = [] %>
 <% Ingredient.all.each { |x| @list << x.name } %>
 
-<%= simple_form_for [@cocktail, @dose], :url => create_dose_path do |f| %>
-    <%= f.input :description %>
-    <%= f.association :ingredient %>
 
-    <%= f.submit %>
-<% end %>
+<div class="simple-form">
+  <%= simple_form_for [@cocktail, @dose], :url => create_dose_path do |f| %>
+      <%= f.input :description %>
+      <%= f.association :ingredient %>
+
+      <%= f.submit %>
+  <% end %></div>
 
