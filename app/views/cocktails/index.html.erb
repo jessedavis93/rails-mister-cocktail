@@ -1,16 +1,38 @@
 <div class="index-header">
-  <h1>HammerD</h1>
-
-  <h2>Cocktails</h2>
+  <div class="container">
+      <div class="row" id="title">
+        <div class="col-xs-12">
+          <h1>Hammer'D <%= image_tag('wine-bottle.png', class: 'wine') %></h1>
+        </div>
+      </div>
+      <div class="row" id="slogan">
+        <div class="col-xs-12 col-xs-offset-3">
+          <h3>Real booze recipes for real alcoholics.</h3>
+        </div>
+      </div>
+  </div>
 </div>
 
-<div class="drinks">
-  <% @cocktails.each do |drink| %>
-      <div class="each-drink">
-        <%= link_to drink.name, cocktail_path(drink)%>
-      </div>
-  <% end %>
+<div class="begin-here">
+  <h4>Your night starts here...</h4>
 </div>
 
 <div class="add-drink"><%= link_to "Add Drink", cocktail_new_path%>
 </div>
+
+<div class="drinks-cards">
+  <div class="container">
+    <div class="row">
+      <% @cocktails.each do |drink| %>
+          <div class="col-xs-12 col-md-4">
+            <%= link_to cocktail_path(drink) do %>
+              <div class="drink-card">
+                <%= drink.name %>
+              </div>
+            <% end %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
