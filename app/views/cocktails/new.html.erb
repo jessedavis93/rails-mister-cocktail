@@ -5,7 +5,7 @@
 
 <div class="align-one-button">
   <div class="main-button">
-    <%= link_to "Home", cocktails_path %>
+    <%= link_to image_tag('house.png', size: '40x40'), cocktails_path %>
   </div>
 </div>
 
@@ -15,5 +15,6 @@
     <%= f.text_field :name, class: 'form-text-field' %>
 
     <%= f.submit "Add Cocktail", class: 'form-submit-button' %>
-<% end %></div>
+  <% end %>
+</div>
 

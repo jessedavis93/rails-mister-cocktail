@@ -5,22 +5,35 @@
 
 <div class="align-one-button">
   <div class="main-button">
-    <%= link_to "Home", cocktails_path %>
+    <%= link_to image_tag('house.png', size: '40x40'), cocktails_path %>
   </div>
 </div>
 
-<h4>Add ingredients to your drink</h4>
+<div class="centered-message">
+  <h4>Add ingredients to your drink</h4>
+</div>
 
 
 <% @list = [] %>
 <% Ingredient.all.each { |x| @list << x.name } %>
 
 
-<div class="simple-form">
-  <%= simple_form_for [@cocktail, @dose], :url => create_dose_path do |f| %>
-      <%= f.input :description %>
-      <%= f.association :ingredient %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-xs-offset-2 col-md-6 col-md-offset-5">
+      <div class="simple-form">
+        <%= simple_form_for [@cocktail, @dose], :url => create_dose_path do |f| %>
 
-      <%= f.submit %>
-  <% end %></div>
+            <%= f.input :description, :input_html => { class: 'input'}, label: "Enter your quantity here" %>
+
+            <%= f.association :ingredient, :input_html => { class: 'association' },label: 'And now choose an ingredient' %>
+
+            <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+              <i class="icon-ok icon-white"></i> Save
+            <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 

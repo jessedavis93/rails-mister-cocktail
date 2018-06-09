@@ -19,7 +19,9 @@
 
 <div class="align-one-button">
   <div class="main-button">
-    <%= link_to "Add Drink", cocktail_new_path%>
+    <%= link_to cocktail_new_path do %>
+      <i class="fas fa-plus"></i>
+    <% end %>
   </div>
 </div>
 

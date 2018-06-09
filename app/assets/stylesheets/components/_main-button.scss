@@ -1,21 +1,21 @@
 .main-button {
   display: flex;
-  width: 150px;
+  width: 60px;
   height: 50px;
-  border: 2px solid black;
-  border-radius: 5px;
   justify-content: center;
   align-items: center;
   font-size: 26px;
   font-family: 'Risque', cursive;
 
   a {
-    color: black;
+    color: rgba(0,0,0,0.5)
   }
 
   &:hover {
     background: black;
     opacity: 0.6;
+    border: 2px solid rgba(0,0,0,0.2);
+    border-radius: 5px;
 
     a {
       color: white;

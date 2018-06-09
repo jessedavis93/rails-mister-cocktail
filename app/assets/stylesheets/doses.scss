@@ -3,7 +3,44 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .simple_form {
-  display: flex;
-  justify-content: space-around;
-  width: auto;
+  display: block;
+  margin-top: 40px;
+}
+
+.input {
+  width: 200px;
+  padding: 0px;
+  text-align: center;
+  background: #A4969B;
+  border: 2px solid rgba(0,0,0,0.5);
+  color: black;
+  font-size: 18px;
+}
+
+.association {
+  width: 200px;
+  text-align: center;
+  background: #A4969B;
+  border: 2px solid rgba(0,0,0,0.5);
+  color: black;
+
+}
+
+.btn-primary {
+  width: 100px;
+  height: 35px;
+  font-size: 18px;
+  text-align: center;
+  background: rgba(0,0,0,0.5);
+  border-color: rgba(0,0,0,0.5);
+
+  &:hover {
+    background: rgba(0,0,0,0.7);
+    border-color: black;
+  }
+}
+
+.centered-message {
+  text-align: center;
+  margin: 10px;
 }
