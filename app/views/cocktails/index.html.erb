@@ -1,20 +1,31 @@
 <div class="index-header">
   <div class="container">
+
       <div class="row" id="title">
         <div class="col-xs-12">
           <h1>Hammer'D <%= image_tag('wine-bottle.png', class: 'wine') %></h1>
         </div>
       </div>
+
       <div class="row" id="slogan">
         <div class="col-xs-12 col-xs-offset-3">
           <h3>Real booze recipes for real alcoholics.</h3>
         </div>
       </div>
+
+      <div class="search-bar">
+        <%= form_tag(cocktails_path, method: :get) do %>
+          <%= text_field_tag :term, params[:term], placeholder: 'Search booze here', class: 'search-bar--input' %>
+          <%= image_submit_tag('research.png', class: 'search-bar--submit') %>
+        <% end %>
+      </div>
+
   </div>
 </div>
 
+
 <div class="begin-here">
-  <h4>Your night starts here...</h4>
+  <h4>Or browse...</h4>
 </div>
 
 <div class="align-one-button">
@@ -31,9 +42,11 @@
       <% @cocktails.each do |drink| %>
           <div class="col-xs-12 col-md-4">
             <%= link_to cocktail_path(drink) do %>
+            <div data-aos="fade-up">
               <div class="drink-card">
                 <%= drink.name %>
               </div>
+            </div>
             <% end %>
           </div>
       <% end %>
