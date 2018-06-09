@@ -7,11 +7,12 @@
   <div class="main-button">
     <%= link_to image_tag('house.png', size: '40x40'), cocktails_path %>
   </div>
-  <div class="main-button">
+
     <%= link_to dose_new_path(@cocktail) do %>
-      <i class="fas fa-plus"></i>
+      <div class="main-button">
+        <i class="fas fa-plus"></i>
+      </div>
     <% end %>
-  </div>
 </div>
 
 
